@@ -16,14 +16,12 @@
       align-items: center;
       font-family: 'Arial', sans-serif;
     }
-
     .fade-in {
       opacity: 0;
       animation: fadeIn 2s forwards;
       text-align: center;
       letter-spacing: 2px; /* 글자 간격 조정 */
     }
-
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -32,7 +30,6 @@
         opacity: 1;
       }
     }
-
     .quote {
       font-size: 3rem;  /* 글자 크기 */
       font-weight: bold;  /* 글씨 두껍게 */
@@ -47,32 +44,28 @@
   <div id="quote" class="quote fade-in">
     여기에 응원 메시지가 나타납니다.
   </div>
-
   <script>
     // 랜덤 응원 메시지 배열
     const quotes = [
-    “네가 선택한 거라면 그게 맞는 거지”
-    “너의 신중한 결정을 믿어”
-    “이것도 큰 완성의 일부야”
-    “지금까지 간직해 온 신념이 도움이 될거야”
-    “네가 확인한 것만 믿으면 돼”
-    “돌아갈 수는 있어도 길을 잃지는 않을 거야”
-    “변화할 용기가 나지 않는다면 아직 충분히 괴롭지 않은 거야” 
-    "너만 생각해"
-      ];
-
+      “네가 선택한 거라면 그게 맞는 거지”
+      “너의 신중한 결정을 믿어”
+      “이것도 큰 완성의 일부야”
+      “지금까지 간직해 온 신념이 도움이 될거야”
+      “네가 확인한 것만 믿으면 돼”
+      “돌아갈 수는 있어도 길을 잃지는 않을 거야”
+      “변화할 용기가 나지 않는다면 아직 충분히 괴롭지 않은 거야”
+      "너만 생각해"
+    ];
     // 랜덤 메시지 함수
     function showRandomQuote() {
       const quoteElement = document.getElementById('quote');
       const randomIndex = Math.floor(Math.random() * quotes.length);
       quoteElement.textContent = quotes[randomIndex];
-
       // 애니메이션 다시 적용
       quoteElement.classList.remove('fade-in');
       void quoteElement.offsetWidth;  // 트릭을 위한 강제 리플로우
       quoteElement.classList.add('fade-in');
     }
-
     // 페이지가 로드되면 랜덤 메시지 표시
     window.onload = showRandomQuote;
   </script>
